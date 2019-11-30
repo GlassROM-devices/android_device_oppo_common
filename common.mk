@@ -21,6 +21,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     ConfigPanel
 
+# never dexopt the keyhandler
+$(call add-product-dex-preopt-module-config,ConfigPanel,disable)
+
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_oppo
